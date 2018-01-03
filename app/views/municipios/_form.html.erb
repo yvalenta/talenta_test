@@ -1,0 +1,32 @@
+<%= form_with(model: municipio, local: true) do |form| %>
+  <% if municipio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(municipio.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+      <ul>
+      <% municipio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.number_field :codigo, id: :municipio_codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :municipio_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.check_box :estado, id: :municipio_estado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
