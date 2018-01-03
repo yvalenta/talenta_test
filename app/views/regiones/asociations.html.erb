@@ -1,0 +1,28 @@
+<h1>Asociacion de Regiones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Estado</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @asociations.each do |asociation| %>
+      <tr>
+        <td><%= asociation.municipio.codigo %></td>
+        <td><%= asociation.municipio.nombre %></td>
+        <td><%= get_estado(asociation.municipio.estado) %></td>
+        <td><%= link_to 'Edit', edit_municipio_path(asociation.municipio) %></td>
+        <td><%= link_to 'Destroy', asociation.municipio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back to regiones', regiones_path %>

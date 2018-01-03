@@ -61,6 +61,12 @@ class RegionesController < ApplicationController
     end
   end
 
+  def asociations
+    region = params[:region_id]
+    @asociations = Asociation.where(region_id: region)
+    #binding.pry
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region
