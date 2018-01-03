@@ -25,4 +25,7 @@
 
 <br>
 
-<%= link_to 'Back to regiones', regiones_path %>
+<%= link_to 'Back to regiones', regiones_path %> | 
+<%= link_to 'Crear municipio', new_municipio_path %> |
+<%= link_to "Asociar municipio a region #{@region_object.nombre}", region_create_asociations_path(@region_object) %> |
+

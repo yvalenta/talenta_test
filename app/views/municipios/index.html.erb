@@ -17,7 +17,7 @@
       <tr>
         <td><%= municipio.codigo %></td>
         <td><%= municipio.nombre %></td>
-        <td><%= municipio.estado %></td>
+        <td><%= get_estado(municipio.estado) %></td>
         <td><%= link_to 'Show', municipio %></td>
         <td><%= link_to 'Edit', edit_municipio_path(municipio) %></td>
         <td><%= link_to 'Destroy', municipio, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,10 @@
+<h1>Asociar municipios</h1>
+
+<%#= form_for(@asociations) do |f| %>
+<%#= form_for(@asociations), :url => { :action => "send_asociation" } do |f| %>
+<%= form_for(@asociations, :url => '/region/send_asociation') do |f| %>
+	<%= f.collection_select :municipio_id, Municipio.all, :id, :nombre %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back to regiones', :back %> | 

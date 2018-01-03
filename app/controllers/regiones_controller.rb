@@ -63,8 +63,21 @@ class RegionesController < ApplicationController
 
   def asociations
     region = params[:region_id]
+    @region_object = Region.find(params[:region_id])
     @asociations = Asociation.where(region_id: region)
     #binding.pry
+  end
+
+  def create_asociations
+    @region = params[:region_id]
+    @region_object = Region.find(params[:region_id])
+    @asociations = Asociation.new
+    #@listar_municipios = Municipio.all
+  end
+
+  def send_asociation
+    binding.pry
+    perro
   end
 
   private
